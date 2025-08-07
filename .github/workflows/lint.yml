@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install Dependencies
-        run: make install
+      - name: Update and Install Dependencies
+        run: make update && make install
 
       - name: Run Linter
         run: make lint
