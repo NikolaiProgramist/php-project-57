@@ -17,8 +17,8 @@ jobs:
         with:
           php-version: '8.2'
 
-      - name: Install Dependencies
-        run: make install
+      - name: Update and Install Dependencies
+        run: make update && make install
 
       - name: Run Linter
         run: make lint
