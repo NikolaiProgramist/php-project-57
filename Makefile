@@ -1,9 +1,6 @@
 install:
 	composer install
 
-update:
-	composer update
-
 test:
 	composer exec --verbose phpunit tests
 
