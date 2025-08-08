@@ -20,5 +20,8 @@ jobs:
       - name: Install Dependencies
         run: make install
 
+      - name: Generate Key
+        run: php artisan key:generate
+
       - name: Run Tests
         run: make test
