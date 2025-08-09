@@ -1,2 +1,3 @@
-### Hexlet tests and linter status:
+# Task Manager
+
 [![Actions Status](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/NikolaiProgramist/php-project-57/actions) [![lint](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/lint.yml/badge.svg)](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/lint.yml) [![tests](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/tests.yml/badge.svg)](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/tests.yml)
