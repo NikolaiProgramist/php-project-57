@@ -20,6 +20,9 @@ jobs:
       - name: Install Dependencies
         run: make install
 
+      - name: Copy .env.example to .env
+        run: cp .env.example .env
+
       - name: Generate Key
         run: php artisan key:generate
 
