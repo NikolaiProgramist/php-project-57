@@ -1,3 +1,6 @@
+start:
+	php artisan serve --host=0.0.0.0
+
 setup:
 	make install
 	cp .env.example .env
@@ -6,7 +9,6 @@ setup:
 	php artisan db:seed
 	npm ci
 	npm run build
-	php artisan serve --host=0.0.0.0
 
 install:
 	composer install
