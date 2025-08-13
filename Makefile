@@ -1,5 +1,5 @@
 setup:
-	composer install
+	make install
 	cp .env.example .env
 	php artisan key:generate
 	php artisan migrate --force
@@ -7,6 +7,9 @@ setup:
 	npm ci
 	npm run build
 	php artisan serve --host=0.0.0.0 --port=$PORT
+
+install:
+	composer install
 
 test:
 	composer exec --verbose phpunit tests
