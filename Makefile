@@ -6,7 +6,7 @@ setup:
 	php artisan db:seed
 	npm ci
 	npm run build
-	php artisan serve --host=0.0.0.0 --port=$PORT
+	php artisan serve --host=0.0.0.0
 
 install:
 	composer install
