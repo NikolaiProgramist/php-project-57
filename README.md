@@ -4,3 +4,42 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=coverage)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57) [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=bugs)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57)
 
 **See the web service:** [Task Manager](https://php-project-57-xp8o.onrender.com).
+
+## Setup
+
+Download this project:
+
+```shell
+git clone https://github.com/NikolaiProgramist/php-project-57.git
+cd php-project-57
+```
+
+Configure your database credentials:
+
+```text
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=db
+DB_USERNAME=user
+DB_PASSWORD=password
+```
+
+Run Task Manager setup:
+
+```shell
+make setup
+```
+
+Run tests:
+
+```shell
+make test
+```
+
+Start server:
+
+```shell
+make start
+```
+
+Welcome to the Task Manager: https://localhost:8000.
