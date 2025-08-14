@@ -24,7 +24,7 @@ DB_USERNAME=user
 DB_PASSWORD=password
 ```
 
-Run Task Manager setup:
+Run project setup:
 
 ```shell
 make setup
