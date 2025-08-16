@@ -22,7 +22,7 @@ RUN groupadd -g 1000 app_user && \
 
 USER app_user
 
-RUN composer install \
+RUN composer install --no-dev \
     && cp .env.example .env \
     && npm ci \
     && npm run build \
