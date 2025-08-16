@@ -17,6 +17,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN make setup
+RUN make setup-production
 
 CMD ["bash", "-c", "make start"]
