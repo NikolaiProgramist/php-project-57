@@ -17,6 +17,11 @@ WORKDIR /app
 
 COPY . .
 
+RUN groupadd -g 1000 app_user && \
+    useradd -u 1000 -g app_user -s /bin/bash -m app_user
+
+USER app_user
+
 RUN composer install \
     cp .env.example .env \
     npm ci \
