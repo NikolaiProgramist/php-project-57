@@ -3,6 +3,13 @@ PORT ?= 8000
 start:
 	php artisan serve --host=0.0.0.0 --port=$(PORT)
 
+setup-production:
+	make install
+	cp .env.example .env
+	php artisan key:generate
+	npm ci
+	npm run build
+
 setup:
 	make install
 	cp .env.example .env
