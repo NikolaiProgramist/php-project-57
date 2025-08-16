@@ -7,6 +7,8 @@ setup:
 	make install
 	cp .env.example .env
 	php artisan key:generate
+	php artisan migrate --force
+	php artisan db:seed
 	npm ci
 	npm run build
 
