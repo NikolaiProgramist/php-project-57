@@ -14,13 +14,14 @@ git clone https://github.com/NikolaiProgramist/php-project-57.git
 cd php-project-57
 ```
 
-Configure your database credentials:
+Configure your database credentials in the `.env.example`:
 
 ```text
-DB_HOST=127.0.0.1
+DB_CONNECTION=pgsql
+DB_HOST=host
 DB_PORT=5432
 DB_DATABASE=db
-DB_USERNAME=user
+DB_USERNAME=username
 DB_PASSWORD=password
 ```
 
