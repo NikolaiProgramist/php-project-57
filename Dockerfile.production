@@ -19,4 +19,4 @@ COPY . .
 
 RUN make setup-production
 
-CMD ["bash", "-c", "php artisan migrate --force --seed && make start"]
+CMD ["bash", "-c", "php artisan migrate:fresh --seed && make start"]
