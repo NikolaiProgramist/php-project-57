@@ -17,6 +17,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN make setup-production
+RUN make setup-docker
 
 CMD ["bash", "-c", "php artisan migrate --force --seed && make start"]
