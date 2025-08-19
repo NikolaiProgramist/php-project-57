@@ -14,33 +14,31 @@ git clone https://github.com/NikolaiProgramist/php-project-57.git
 cd php-project-57
 ```
 
-Configure your database credentials in the `.env.example`:
+### Docker
+
+Uncommiting database variables, and set driver to the `pgsql` in the `.env.example`:
 
 ```text
 DB_CONNECTION=pgsql
-DB_HOST=host
+DB_HOST=db
 DB_PORT=5432
-DB_DATABASE=db
-DB_USERNAME=username
+DB_DATABASE=postgres
+DB_USERNAME=postgres
 DB_PASSWORD=password
 ```
 
-Run project setup:
+Run `docker-compose.yml`:
+
+```shell
+docker compose up
+```
+
+Follow this link: http://localhost:8000
+
+### Without docker
 
 ```shell
 make setup
 ```
 
-Run tests:
-
-```shell
-make test
-```
-
-Start server:
-
-```shell
-make start
-```
-
-Welcome to the Task Manager: https://localhost:8000.
+Follow this link: http://localhost:8000
