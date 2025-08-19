@@ -13,11 +13,12 @@ setup-docker:
 setup:
 	make install
 	cp .env.example .env
+	touch database/database.sqlite
 	php artisan key:generate
-	php artisan migrate --force
-	php artisan db:seed
+	php artisan migrate:fresh --force --seed
 	npm ci
 	npm run build
+	make start
 
 install:
 	composer install
