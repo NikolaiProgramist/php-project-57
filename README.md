@@ -16,7 +16,7 @@ cd php-project-57
 
 ### Docker
 
-Uncommiting database variables, and set driver to the `pgsql` in the `.env.example`:
+Uncommit database variables, and set driver to the `pgsql` in the `.env.example`:
 
 ```text
 DB_CONNECTION=pgsql
