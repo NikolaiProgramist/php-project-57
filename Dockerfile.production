@@ -19,4 +19,4 @@ COPY . .
 
 RUN make setup-docker
 
-CMD ["bash", "-c", "php artisan migrate && make start"]
+CMD ["bash", "-c", "php artisan migrate --force && make start"]
