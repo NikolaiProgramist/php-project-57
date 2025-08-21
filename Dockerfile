@@ -17,6 +17,12 @@ WORKDIR /app
 
 COPY . .
 
-RUN make setup-docker
+RUN composer install
+RUN cp .env.example .env
+RUN php artisan key:generate
+RUN npm ci
+RUN npm run build
+
+RUN > database/database.sqlite
 
 CMD ["bash", "-c", "php artisan migrate:fresh --force --seed && make start"]
