@@ -64,3 +64,13 @@ Run server:
 ```shell
 make start
 ```
+
+## License
+
+There is currently no license.
+
+All rights reserved ©
+
+## Support
+
+* You can [Create Issues](https://github.com/NikolaiProgramist/php-project-57/issues) to help improve the project. You can suggest your ideas, find bugs and errors. We will be grateful for your help!
