@@ -34,7 +34,7 @@ make setup-start
 
 ### 🐋 Docker 
 
-Uncommit database variables, and set driver to the `pgsql` in the `.env.example`:
+Change the database environment variables in the `.env.example` as specified here:
 
 ```text
 DB_CONNECTION=pgsql
