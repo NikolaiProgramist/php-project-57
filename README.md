@@ -75,4 +75,4 @@ You can [Create Issues](https://github.com/NikolaiProgramist/php-project-57/issu
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/NikolaiProgramist/php-project-48.svg?variant=adaptive)](https://starchart.cc/NikolaiProgramist/php-project-48)
+[![Stargazers over time](https://starchart.cc/NikolaiProgramist/php-project-57.svg?variant=adaptive)](https://starchart.cc/NikolaiProgramist/php-project-57)
