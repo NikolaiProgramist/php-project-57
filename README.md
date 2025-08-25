@@ -9,6 +9,12 @@ This is a minimalistic CRM system for managing the flow of tasks and personnel.
 
 **See the web service:** [Task Manager](https://php-project-57-xp8o.onrender.com).
 
+## Requirements
+
+* PHP ^8.2
+* Node ^20.19.0 || >=22.12.0
+* npm
+
 ## Setup
 
 1. Download this project:
