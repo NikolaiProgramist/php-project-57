@@ -17,6 +17,15 @@ setup-start:
 	make setup
 	make start
 
+console:
+	php artisan tinker
+
+log:
+	tail -f storage/logs/laravel.log
+
+compose-db:
+	docker compose exec db psql -U postgres
+
 install:
 	composer install
 
