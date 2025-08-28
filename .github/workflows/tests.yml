@@ -19,8 +19,8 @@ jobs:
         with:
           php-version: '8.2'
 
-      - name: Install Dependencies
-        run: make install
+      - name: Setup Project
+        run: make setup
 
       - name: Copy .env.example to .env
         run: cp .env.example .env
