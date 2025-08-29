@@ -28,7 +28,7 @@ This is a minimalistic CRM system for managing the flow of tasks and personnel.
 2. Select setup type:
 
    * [Quick Start](#-quick-start)
-   * [Docker](#-docker-)
+   * [Docker](#-docker)
    * [Local](#-local)
 
 3. Follow this link: http://localhost:8000
