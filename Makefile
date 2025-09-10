@@ -39,7 +39,7 @@ test-coverage-text:
 	XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-text
 
 lint:
-	./vendor/bin/pint app routes tests --test
+	./vendor/bin/pint app routes tests --test --verbose
 
 lint-fix:
 	./vendor/bin/pint app routes tests
