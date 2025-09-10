@@ -40,3 +40,6 @@ test-coverage-text:
 
 lint:
 	./vendor/bin/pint app routes tests --test
+
+lint-fix:
+	./vendor/bin/pint app routes tests
