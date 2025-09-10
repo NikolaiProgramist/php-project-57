@@ -39,7 +39,7 @@ This is a minimalistic CRM system for managing the flow of tasks and personnel.
 make setup-start
 ```
 
-### 🐋 Docker 
+### 🐋 Docker
 
 Change the database environment variables in the `.env.example` as specified here:
 
