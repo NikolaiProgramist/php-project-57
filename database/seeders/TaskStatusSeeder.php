@@ -13,19 +13,19 @@ class TaskStatusSeeder extends Seeder
     public function run(): void
     {
         TaskStatus::create([
-            'name' => 'новый'
+            'name' => 'новый',
         ]);
 
         TaskStatus::create([
-            'name' => 'в работе'
+            'name' => 'в работе',
         ]);
 
         TaskStatus::create([
-            'name' => 'на тестировании'
+            'name' => 'на тестировании',
         ]);
 
         TaskStatus::create([
-            'name' => 'завершен'
+            'name' => 'завершен',
         ]);
     }
 }
