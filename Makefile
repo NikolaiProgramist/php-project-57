@@ -42,4 +42,4 @@ lint:
 	./vendor/bin/pint app routes database resources tests --test --verbose
 
 lint-fix:
-	./vendor/bin/pint app routes tests
+	./vendor/bin/pint app routes database resources tests
