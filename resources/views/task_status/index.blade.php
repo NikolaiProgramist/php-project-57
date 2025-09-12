@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Statuses') }}
+            {{ __('Статусы') }}
         </h2>
     </x-slot>
 
@@ -15,17 +15,17 @@
                                 <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">ID</h3>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Name</h3>
+                                <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Имя</h3>
                             </div>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Create date</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Дата создания</h3>
                         </div>
                     </div>
 
                     @auth()
                         <div class="w-[18%] h-auto text-center items-center space-x-4 mb-2 p-3">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Actions</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Действия</h3>
                         </div>
                     @endauth
                 </div>
