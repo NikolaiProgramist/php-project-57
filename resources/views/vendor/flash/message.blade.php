@@ -8,15 +8,15 @@
     @else
         @switch($message['level'])
             @case('success')
-                <x-success-flash :message="$message"></x-success-flash>
+                <x-success-flash :message="{{ $message }}"></x-success-flash>
                 @break
 
             @case('danger')
-                <x-danger-flash :message="$message"></x-danger-flash>
+                <x-danger-flash :message="{{ $message }}"></x-danger-flash>
                 @break
 
             @case('warning')
-                <x-warning-flash :message="$message"></x-warning-flash>
+                <x-warning-flash :message="{{ $message }}"></x-warning-flash>
                 @break
         @endswitch
     @endif
