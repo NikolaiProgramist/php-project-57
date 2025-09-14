@@ -32,6 +32,8 @@
             <main>
                 {{ $slot }}
             </main>
+
+            @include('flash::message')
         </div>
     </body>
 </html>
