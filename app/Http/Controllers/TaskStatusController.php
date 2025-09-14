@@ -6,17 +6,20 @@ use App\Http\Requests\StoreTaskStatusRequest;
 use App\Http\Requests\UpdateTaskStatusRequest;
 use App\Models\TaskStatus;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 
 class TaskStatusController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(TaskStatus::class);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
-        Gate::check('view-any', TaskStatus::class);
         $taskStatuses = TaskStatus::paginate(3);
 
         return view('task_status.index', compact('taskStatuses'));
@@ -27,8 +30,6 @@ class TaskStatusController extends Controller
      */
     public function create(): View
     {
-        Gate::authorize('create', TaskStatus::class);
-
         return view('task_status.create');
     }
 
@@ -37,7 +38,6 @@ class TaskStatusController extends Controller
      */
     public function store(StoreTaskStatusRequest $request): RedirectResponse
     {
-        Gate::authorize('create', TaskStatus::class);
         TaskStatus::create($request->all());
 
         return redirect(route('task_statuses.index'));
@@ -48,8 +48,6 @@ class TaskStatusController extends Controller
      */
     public function edit(TaskStatus $taskStatus): View
     {
-        Gate::authorize('update', $taskStatus);
-
         return view('task_status.edit', compact('taskStatus'));
     }
 
@@ -58,7 +56,6 @@ class TaskStatusController extends Controller
      */
     public function update(UpdateTaskStatusRequest $request, TaskStatus $taskStatus): RedirectResponse
     {
-        Gate::authorize('update', $taskStatus);
         $taskStatus->update($request->all());
 
         return redirect(route('task_statuses.index'));
@@ -69,7 +66,6 @@ class TaskStatusController extends Controller
      */
     public function destroy(TaskStatus $taskStatus): RedirectResponse
     {
-        Gate::authorize('delete', $taskStatus);
         $taskStatus->delete();
 
         return redirect(route('task_statuses.index'));
