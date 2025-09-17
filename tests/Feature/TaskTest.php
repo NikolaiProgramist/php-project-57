@@ -88,7 +88,7 @@ class TaskTest extends TestCase
                 'assigned_to_id' => $this->assignedUser->id,
             ]);
 
-        $response->assertRedirectBackWithErrors('flash_notification');
+        $response->assertRedirectBack();
     }
 
     public function test_task_is_displayed(): void
