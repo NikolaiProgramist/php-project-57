@@ -59,9 +59,7 @@ class TaskTest extends TestCase
                 'assigned_to_id' => $this->assignedUser,
             ]);
 
-        $response
-            ->assertOk()
-            ->assertRedirect('/tasks');
+        $response->assertRedirect('/tasks');
 
         $this->assertDatabaseHas('tasks', [
             'name' => 'Run tests',
