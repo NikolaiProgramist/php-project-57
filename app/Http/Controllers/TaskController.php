@@ -43,8 +43,9 @@ class TaskController extends Controller
     public function store(StoreTaskRequest $request): RedirectResponse
     {
         $task = new Task($request->all());
-        $task->created_by_id = Auth::id();
+        $task->createdBy()->associate(Auth::user());
         $task->save();
+
         flash('Задача успешно создана')->success();
 
         return redirect(route('tasks.index'));
