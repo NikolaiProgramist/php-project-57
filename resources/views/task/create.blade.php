@@ -41,7 +41,7 @@
                         <x-input-label for="assigned_to_id" :value="__('Исполнитель')"/>
                         <select id="assigned_to_id" name="assigned_to_id"
                                 class="mt-1 block border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                            <option value="null"></option>
+                            <option value=""></option>
                             @foreach($users as $user)
                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
                             @endforeach

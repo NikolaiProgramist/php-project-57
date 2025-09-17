@@ -40,9 +40,14 @@ class TaskController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreTaskRequest $request)
+    public function store(StoreTaskRequest $request): RedirectResponse
     {
-        //
+        $task = new Task($request->all());
+        $task->created_by_id = Auth::id();
+        $task->save();
+        flash('Задача успешно создана')->success();
+
+        return redirect(route('tasks.index'));
     }
 
     /**
