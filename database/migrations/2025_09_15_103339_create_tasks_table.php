@@ -15,12 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('name')->unique()->isNotEmpty();
             $table->text('description');
-            $table->unsignedBigInteger('status_id');
-            $table->foreign('status_id')->references('id')->on('task_statuses');
-            $table->unsignedBigInteger('created_by_id');
-            $table->foreign('created_by_id')->references('id')->on('users');
-            $table->unsignedBigInteger('assigned_to_id')->nullable();
-            $table->foreign('assigned_to_id')->references('id')->on('users');
+            $table->foreignId('status_id')->constrained('task_statuses', 'id');
+            $table->foreignId('created_by_id')->constrained('users', 'id');
+            $table->foreignId('assigned_to_id')->nullable()->constrained('users', 'id');
             $table->timestamps();
         });
     }
