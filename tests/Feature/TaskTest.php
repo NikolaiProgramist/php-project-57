@@ -73,9 +73,9 @@ class TaskTest extends TestCase
             ->post('/tasks', [
                 'name' => 'Run tests',
                 'description' => 'Some description',
-                'status_id' => $this->taskStatus,
-                'created_by_id' => $this->user,
-                'assigned_to_id' => $this->assignedUser,
+                'status_id' => $this->taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $this->assignedUser->id,
             ]);
 
         $response = $this
@@ -83,9 +83,9 @@ class TaskTest extends TestCase
             ->post('/tasks', [
                 'name' => 'Run tests',
                 'description' => 'Some description',
-                'status_id' => $this->taskStatus,
-                'created_by_id' => $this->user,
-                'assigned_to_id' => $this->assignedUser,
+                'status_id' => $this->taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $this->assignedUser->id,
             ]);
 
         $response->assertRedirectBackWithErrors('flash_notification');
