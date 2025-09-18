@@ -24,8 +24,7 @@
                         <x-textarea-input id="description" name="description" :value="$task->description"
                                           cols="30"
                                           rows="6"
-                                          class="mt-1 block w-full"
-                                          required></x-textarea-input>
+                                          class="mt-1 block w-full"></x-textarea-input>
                         <x-input-error class="mt-2" :messages="$errors->get('description')"/>
                     </div>
 

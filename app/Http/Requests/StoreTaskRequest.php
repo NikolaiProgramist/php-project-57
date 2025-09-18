@@ -29,7 +29,6 @@ class StoreTaskRequest extends FormRequest
                 'max:50',
             ],
             'description' => [
-                'string',
                 'max:500',
             ],
             'status_id' => [

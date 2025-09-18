@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('name')->unique()->isNotEmpty();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->foreignId('status_id')->constrained('task_statuses', 'id');
             $table->foreignId('created_by_id')->constrained('users', 'id');
             $table->foreignId('assigned_to_id')->nullable()->constrained('users', 'id');
