@@ -73,9 +73,12 @@ class TaskController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTaskRequest $request, Task $task)
+    public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
     {
-        //
+        $task->update($request->all());
+        flash('Задача успешно изменена')->success();
+
+        return redirect(route('tasks.index'));
     }
 
     /**
