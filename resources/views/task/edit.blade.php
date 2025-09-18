@@ -49,7 +49,7 @@
                                 class="mt-1 block border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
                             <option value=""></option>
                             @foreach($users as $user)
-                                @if($user->id === $task->assignedTo->id)
+                                @if($user->id === optional($task->assignedTo)->id)
                                     <option selected="selected" value="{{ $user->id }}">{{ $user->name }}</option>
                                 @else
                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
