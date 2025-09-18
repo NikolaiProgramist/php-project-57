@@ -210,7 +210,7 @@ class TaskTest extends TestCase
             ->actingAs($this->assignedUser)
             ->delete('/tasks/1');
 
-        $response->assertRedirectBackWithErrors('flash_notification');
+        $response->assertStatus(403);
 
         $this->assertDatabaseHas('tasks', [
             'name' => 'Run tests',
