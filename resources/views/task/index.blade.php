@@ -53,7 +53,7 @@
                                     <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->createdBy->name }}</p>
                                 </div>
                                 <div class="w-[16%]">
-                                    <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->assignedTo->name ?? '-' }}</p>
+                                    <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->assignedTo->name ?? '' }}</p>
                                 </div>
                                 <div class="w-[16%]">
                                     <p class="text-sm mt-1 text-gray-600 font-bold dark:text-gray-300">{{ Carbon\Carbon::createFromDate($task->created_at)->format('d.m.Y') }}</p>
