@@ -98,9 +98,9 @@ class TaskTest extends TestCase
             ->post('/tasks', [
                 'name' => 'Run tests',
                 'description' => 'Some description',
-                'status_id' => $this->taskStatus,
-                'created_by_id' => $this->user,
-                'assigned_to_id' => $this->assignedUser,
+                'status_id' => $this->taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $this->assignedUser->id,
             ]);
 
         $response = $this->get('/tasks/1');
@@ -114,9 +114,9 @@ class TaskTest extends TestCase
             ->post('/tasks', [
                 'name' => 'Run tests',
                 'description' => 'Some description',
-                'status_id' => $this->taskStatus,
-                'created_by_id' => $this->user,
-                'assigned_to_id' => $this->assignedUser,
+                'status_id' => $this->taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $this->assignedUser->id,
             ]);
 
         $response = $this
@@ -133,9 +133,9 @@ class TaskTest extends TestCase
             ->post('/tasks', [
                 'name' => 'Run tests',
                 'description' => 'Some description',
-                'status_id' => $this->taskStatus,
-                'created_by_id' => $this->user,
-                'assigned_to_id' => $this->assignedUser,
+                'status_id' => $this->taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $this->assignedUser->id,
             ]);
 
         $this->assertDatabaseHas('tasks', [
@@ -147,9 +147,9 @@ class TaskTest extends TestCase
             ->patch('/tasks/1', [
                 'name' => 'Review tests',
                 'description' => 'Some description',
-                'status_id' => $this->taskStatus,
-                'created_by_id' => $this->user,
-                'assigned_to_id' => $this->assignedUser,
+                'status_id' => $this->taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $this->assignedUser->id,
             ]);
 
         $response
@@ -172,9 +172,9 @@ class TaskTest extends TestCase
             ->post('/tasks', [
                 'name' => 'Run tests',
                 'description' => 'Some description',
-                'status_id' => $this->taskStatus,
-                'created_by_id' => $this->user,
-                'assigned_to_id' => $this->assignedUser,
+                'status_id' => $this->taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $this->assignedUser->id,
             ]);
 
         $this->assertDatabaseHas('tasks', [
@@ -201,9 +201,9 @@ class TaskTest extends TestCase
             ->post('/tasks', [
                 'name' => 'Run tests',
                 'description' => 'Some description',
-                'status_id' => $this->taskStatus,
-                'created_by_id' => $this->user,
-                'assigned_to_id' => $this->assignedUser,
+                'status_id' => $this->taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $this->assignedUser->id,
             ]);
 
         $this->assertDatabaseHas('tasks', [
