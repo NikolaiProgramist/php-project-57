@@ -47,7 +47,9 @@
                                     <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->status->name }}</p>
                                 </div>
                                 <div class="w-[16%]">
-                                    <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ $task->name }}</h3>
+                                    <a href="{{ route('tasks.show', $task) }}">
+                                        <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ $task->name }}</h3>
+                                    </a>
                                 </div>
                                 <div class="w-[16%]">
                                     <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->createdBy->name }}</p>
