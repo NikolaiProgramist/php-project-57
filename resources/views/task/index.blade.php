@@ -10,13 +10,13 @@
             <div class="p-6">
                 <div class="flex justify-between">
                     <div class="w-[90%] flex justify-between items-center text-left space-x-4 mb-2 p-3 rounded-lg">
-                        <div class="w-[16%]">
+                        <div class="w-[4%]">
                             <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">ID</h3>
                         </div>
-                        <div class="w-[16%]">
+                        <div class="w-[8%]">
                             <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Статус</h3>
                         </div>
-                        <div class="w-[16%]">
+                        <div class="w-[36%]">
                             <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Имя</h3>
                         </div>
                         <div class="w-[16%]">
@@ -40,13 +40,13 @@
                     @foreach($tasks as $task)
                         <div class="flex justify-between">
                             <div class="w-[90%] flex justify-between items-center text-left space-x-4 mb-2 p-3 bg-indigo-50 dark:bg-gray-700 rounded-lg transition-all duration-300 hover:bg-indigo-100 dark:hover:bg-gray-600">
-                                <div class="w-[16%]">
+                                <div class="w-[4%]">
                                     <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->id }}</p>
                                 </div>
-                                <div class="w-[16%]">
+                                <div class="w-[8%]">
                                     <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->status->name }}</p>
                                 </div>
-                                <div class="w-[16%]">
+                                <div class="w-[36%]">
                                     <a href="{{ route('tasks.show', $task) }}">
                                         <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ $task->name }}</h3>
                                     </a>
