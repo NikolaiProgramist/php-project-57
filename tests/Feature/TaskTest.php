@@ -152,9 +152,7 @@ class TaskTest extends TestCase
                 'assigned_to_id' => $this->assignedUser->id,
             ]);
 
-        $response
-            ->assertOk()
-            ->assertRedirect('/tasks');
+        $response->assertRedirect('/tasks');
 
         $this->assertDatabaseMissing('tasks', [
             'name' => 'Run tests',
