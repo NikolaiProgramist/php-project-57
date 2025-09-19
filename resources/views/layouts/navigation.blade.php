@@ -22,6 +22,10 @@
                                 :active="request()->routeIs('task_statuses.index')">
                         {{ __('Статусы') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('labels.index')"
+                                :active="request()->routeIs('labels.index')">
+                        {{ __('Метки') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -102,6 +106,10 @@
                                        :active="request()->routeIs('task_statuses.index')">
                     {{ __('Статусы') }}
                 </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('labels.index')"
+                                       :active="request()->routeIs('labels.index')">
+                    {{ __('Метки') }}
+                </x-responsive-nav-link>
             </div>
 
             <!-- Responsive Settings Options -->
@@ -140,6 +148,9 @@
             </x-nav-link>
             <x-nav-link :href="route('task_statuses.index')" :active="request()->routeIs('task_statuses.index')">
                 {{ __('Статусы') }}
+            </x-nav-link>
+            <x-nav-link :href="route('labels.index')" :active="request()->routeIs('labels.index')">
+                {{ __('Метки') }}
             </x-nav-link>
         @endif
     </div>
