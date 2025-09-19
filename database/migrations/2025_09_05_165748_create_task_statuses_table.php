@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('task_statuses', function (Blueprint $table) {
             $table->id();
-            $table->text('name')->isNotEmpty();
+            $table->string('name')->unique()->isNotEmpty();
             $table->timestamps();
         });
     }
