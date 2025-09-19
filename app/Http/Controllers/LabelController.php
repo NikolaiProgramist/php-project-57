@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreLabelRequest;
 use App\Http\Requests\UpdateLabelRequest;
 use App\Models\Label;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
 
 class LabelController extends Controller
@@ -33,9 +34,12 @@ class LabelController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLabelRequest $request)
+    public function store(StoreLabelRequest $request): RedirectResponse
     {
-        //
+        Label::create($request->all());
+        flash('Метка успешно создана')->success();
+
+        return redirect(route('labels.index'));
     }
 
     /**
