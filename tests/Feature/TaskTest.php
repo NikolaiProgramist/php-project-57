@@ -9,8 +9,6 @@ use Tests\TestCase;
 
 class TaskTest extends TestCase
 {
-    // TODO: Check assert for flash messages and redirect back
-
     use RefreshDatabase;
 
     private User $user;
