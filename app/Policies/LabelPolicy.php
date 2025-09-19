@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Label;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class LabelPolicy
 {
@@ -28,7 +29,7 @@ class LabelPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return Auth::check();
     }
 
     /**
