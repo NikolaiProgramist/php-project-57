@@ -53,9 +53,12 @@ class LabelController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateLabelRequest $request, Label $label)
+    public function update(UpdateLabelRequest $request, Label $label): RedirectResponse
     {
-        //
+        $label->update($request->all());
+        flash('Метка успешно изменена')->success();
+
+        return redirect(route('labels.index'));
     }
 
     /**
