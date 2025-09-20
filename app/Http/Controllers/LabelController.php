@@ -45,9 +45,9 @@ class LabelController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Label $label)
+    public function edit(Label $label): View
     {
-        //
+        return view('label.edit', compact('label'));
     }
 
     /**

@@ -29,7 +29,7 @@ class LabelPolicy
      */
     public function update(User $user, Label $label): bool
     {
-        return false;
+        return Auth::check();
     }
 
     /**
