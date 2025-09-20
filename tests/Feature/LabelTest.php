@@ -55,6 +55,25 @@ class LabelTest extends TestCase
         ]);
     }
 
+    public function test_user_cannot_duplicate_label(): void
+    {
+        $this
+            ->actingAs($this->user)
+            ->post('/labels', [
+                'name' => 'Testing',
+                'description' => 'Some description',
+            ]);
+
+        $response = $this
+            ->actingAs($this->user)
+            ->post('/labels', [
+                'name' => 'Testing',
+                'description' => 'Some description',
+            ]);
+
+        $response->assertRedirectBack();
+    }
+
     public function test_label_edit_form_is_displayed(): void
     {
         $this
