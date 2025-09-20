@@ -64,8 +64,11 @@ class LabelController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Label $label)
+    public function destroy(Label $label): RedirectResponse
     {
-        //
+        $label->delete();
+        flash('Метка успешно удалена')->success();
+
+        return redirect(route('labels.index'));
     }
 }

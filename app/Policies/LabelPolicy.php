@@ -37,6 +37,6 @@ class LabelPolicy
      */
     public function delete(User $user, Label $label): bool
     {
-        return false;
+        return Auth::check();
     }
 }
