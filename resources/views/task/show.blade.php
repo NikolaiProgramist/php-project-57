@@ -47,15 +47,22 @@
                         <p class="text-sm mt-1.5 ml-1 text-gray-600 font-bold dark:text-gray-300">{{ $task->description }}</p>
                     </div>
                 </div>
-                <div class="flex justify-start">
+                <div>
                     <div>
                         <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">
-                            Метки:{{-- Place for the labels --}}
+                            Метки:
                         </h3>
                     </div>
-                    <div>
+                    <div class="flex justify-start mt-3">
                         @foreach($task->labels as $label)
-                            <span class="text-sm mt-1.5 ml-1 text-gray-600 font-bold dark:text-gray-300">{{ $label->name }}</span>
+                            <div class="flex justify-between mt-1.5 mr-1 px-2 py-2 text-sm font-bold text-indigo-800 bg-violet-100/80 rounded-lg hover:bg-violet-300">
+                                <svg class="w-4 mr-1 fill-indigo-800" xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 512 512">
+                                    <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                                    <path d="M32.5 96l0 149.5c0 17 6.7 33.3 18.7 45.3l192 192c25 25 65.5 25 90.5 0L483.2 333.3c25-25 25-65.5 0-90.5l-192-192C279.2 38.7 263 32 246 32L96.5 32c-35.3 0-64 28.7-64 64zm112 16a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/>
+                                </svg>
+                                <span>{{ $label->name }}</span>
+                            </div>
                         @endforeach
                     </div>
                 </div>
