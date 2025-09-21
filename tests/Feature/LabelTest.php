@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\TaskStatus;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -145,8 +146,41 @@ class LabelTest extends TestCase
         ]);
     }
 
-    //    public function test_user_cannot_delete_label_if_it_is_associated_with_task(): void
-    //    {
-    //
-    //    }
+    public function test_user_cannot_delete_label_if_it_is_associated_with_task(): void
+    {
+        $taskStatus = TaskStatus::factory()->create();
+        $assignedUser = User::factory()->create();
+
+        $this
+            ->actingAs($this->user)
+            ->post('/labels', [
+                'name' => 'Testing',
+                'description' => 'Some description',
+            ]);
+
+        $this
+            ->actingAs($this->user)
+            ->post('/tasks', [
+                'name' => 'Run tests',
+                'description' => 'Some description',
+                'status_id' => $taskStatus->id,
+                'created_by_id' => $this->user->id,
+                'assigned_to_id' => $assignedUser->id,
+                'labels' => [1],
+            ]);
+
+        $this->assertDatabaseHas('labels', [
+            'name' => 'Testing',
+        ]);
+
+        $response = $this
+            ->actingAs($this->user)
+            ->delete('/labels/1');
+
+        $response->assertRedirect('/labels');
+
+        $this->assertDatabaseHas('labels', [
+            'name' => 'Testing',
+        ]);
+    }
 }
