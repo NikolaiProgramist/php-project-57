@@ -131,8 +131,39 @@ class TaskStatusTest extends TestCase
         ]);
     }
 
-    //    public function test_user_cannot_delete_task_status_if_it_is_associated_with_task(): void
-    //    {
-    //
-    //    }
+    public function test_user_cannot_delete_task_status_if_it_is_associated_with_task(): void
+    {
+        $user = User::factory()->create();
+        $assignedUser = User::factory()->create();
+
+        $this
+            ->actingAs($user)
+            ->post('/task_statuses', [
+                'name' => 'in testing',
+            ]);
+
+        $this
+            ->actingAs($user)
+            ->post('/tasks', [
+                'name' => 'Run tests',
+                'description' => 'Some description',
+                'status_id' => '1',
+                'created_by_id' => $user->id,
+                'assigned_to_id' => $assignedUser->id,
+            ]);
+
+        $this->assertDatabaseHas('task_statuses', [
+            'name' => 'in testing',
+        ]);
+
+        $response = $this
+            ->actingAs($user)
+            ->delete('/task_statuses/1');
+
+        $response->assertRedirect('/task_statuses');
+
+        $this->assertDatabaseHas('task_statuses', [
+            'name' => 'in testing',
+        ]);
+    }
 }
