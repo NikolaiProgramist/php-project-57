@@ -66,6 +66,12 @@ class LabelController extends Controller
      */
     public function destroy(Label $label): RedirectResponse
     {
+        if ($label->tasks->isNotEmpty()) {
+            flash('Не удалось удалить метку')->error();
+
+            return redirect(route('labels.index'));
+        }
+
         $label->delete();
         flash('Метка успешно удалена')->success();
 
