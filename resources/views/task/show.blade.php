@@ -53,6 +53,11 @@
                             Метки:{{-- Place for the labels --}}
                         </h3>
                     </div>
+                    <div>
+                        @foreach($task->labels as $label)
+                            <span class="text-sm mt-1.5 ml-1 text-gray-600 font-bold dark:text-gray-300">{{ $label->name }}</span>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

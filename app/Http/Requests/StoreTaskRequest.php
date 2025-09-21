@@ -39,6 +39,10 @@ class StoreTaskRequest extends FormRequest
                 'nullable',
                 'exists:users,id',
             ],
+            'labels' => [
+                'nullable',
+                'exists:labels,id',
+            ],
         ];
     }
 }

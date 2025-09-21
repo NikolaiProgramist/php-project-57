@@ -40,6 +40,10 @@ class UpdateTaskRequest extends FormRequest
                 'nullable',
                 'exists:users,id',
             ],
+            'labels' => [
+                'nullable',
+                'exists:labels,id',
+            ],
         ];
     }
 }

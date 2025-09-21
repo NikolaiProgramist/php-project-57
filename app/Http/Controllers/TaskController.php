@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use App\Models\Label;
 use App\Models\Task;
 use App\Models\TaskStatus;
 use App\Models\User;
@@ -33,8 +34,9 @@ class TaskController extends Controller
     {
         $statuses = TaskStatus::all();
         $users = User::all();
+        $labels = Label::all();
 
-        return view('task.create', compact('statuses', 'users'));
+        return view('task.create', compact('statuses', 'users', 'labels'));
     }
 
     /**
@@ -45,6 +47,8 @@ class TaskController extends Controller
         $task = new Task($request->all());
         $task->createdBy()->associate(Auth::user());
         $task->save();
+
+        $task->labels()->sync($request->get('labels'));
 
         flash('Задача успешно создана')->success();
 
@@ -66,8 +70,9 @@ class TaskController extends Controller
     {
         $statuses = TaskStatus::all();
         $users = User::all();
+        $labels = Label::all();
 
-        return view('task.edit', compact('task', 'statuses', 'users'));
+        return view('task.edit', compact('task', 'statuses', 'users', 'labels'));
     }
 
     /**
@@ -76,6 +81,8 @@ class TaskController extends Controller
     public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
     {
         $task->update($request->all());
+        $task->labels()->sync($request->get('labels'));
+
         flash('Задача успешно изменена')->success();
 
         return redirect(route('tasks.index'));
