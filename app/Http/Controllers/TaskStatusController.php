@@ -68,7 +68,7 @@ class TaskStatusController extends Controller
      */
     public function destroy(TaskStatus $taskStatus): RedirectResponse
     {
-        if ($taskStatus->tasks->count() > 0) {
+        if ($taskStatus->tasks->isNotEmpty()) {
             flash('Не удалось удалить статус')->error();
 
             return redirect(route('task_statuses.index'));
