@@ -147,7 +147,7 @@
 
         @auth
             <a href="{{ route('tasks.create') }}"
-               class="flex w-[5%] items-center mt-16 ml-4 bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden transition ease-in-out duration-150 hover:shadow-3xl animate-fade-in tracking-widest hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25">
+               class="flex w-[5%] items-center mt-8 ml-4 bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden transition ease-in-out duration-150 hover:shadow-3xl animate-fade-in tracking-widest hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25">
                 <svg class="w-[40%] mx-auto fill-indigo-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <!--!Font Awesome Free v7.0.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                     <path d="M256 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 160-160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l160 0 0 160c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160 160 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-160 0 0-160z"/>
