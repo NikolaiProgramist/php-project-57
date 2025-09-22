@@ -6,7 +6,52 @@
     </x-slot>
 
     <div class="flex justify-center">
-        <div class="mt-16 bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-[80%] overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
+        <div id="search-bar"
+             class="w-auto max-w-[86%] mt-8 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
+            <form method="GET" action="{{ route('tasks.index') }}" class="flex items-center justify-center">
+                <select name="filter[status_id]" id="filter[status_id]"
+                        class="max-w-[36%] mt-1 mr-4 block border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                    <option value="">Статус</option>
+                    @foreach($statuses as $status)
+                        @if(request()->input('filter.status_id') === (string) $status->id)
+                            <option selected="selected" value="{{ $status->id }}">{{ $status->name }}</option>
+                        @else
+                            <option value="{{ $status->id }}">{{ $status->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+
+                <select name="filter[created_by_id]" id="filter[created_by_id]"
+                        class="max-w-[36%] mt-1 mr-4 block border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                    <option value="">Автор</option>
+                    @foreach($users as $user)
+                        @if(request()->input('filter.created_by_id') === (string) $user->id)
+                            <option selected="selected" value="{{ $user->id }}">{{ $user->name }}</option>
+                        @else
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+
+                <select name="filter[assigned_to_id]" id="filter[assigned_to_id]"
+                        class="max-w-[36%] mt-1 mr-4 block border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
+                    <option value="">Исполнитель</option>
+                    @foreach($users as $user)
+                        @if(request()->input('filter.assigned_to_id') === (string) $user->id)
+                            <option selected="selected" value="{{ $user->id }}">{{ $user->name }}</option>
+                        @else
+                            <option value="{{ $user->id }}">{{ $user->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+
+                <x-primary-button>Применить</x-primary-button>
+            </form>
+        </div>
+    </div>
+
+    <div class="flex justify-center">
+        <div class="mt-8 bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-[80%] overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
             <div class="p-6">
                 <div class="flex justify-between">
                     <div class="w-[90%] flex justify-between items-center text-left space-x-4 mb-2 p-3 rounded-lg">
