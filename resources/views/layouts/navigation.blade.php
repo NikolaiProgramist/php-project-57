@@ -72,7 +72,7 @@
                 </x-nav-link>
                 <x-nav-link class="ml-2 hidden sm:flex" :href="route('register')"
                             :active="request()->routeIs('register')">
-                    {{ __('Зарегистрировать') }}
+                    {{ __('Регистрация') }}
                 </x-nav-link>
             @endif
 
@@ -141,7 +141,7 @@
                 {{ __('Войти') }}
             </x-nav-link>
             <x-nav-link class="ml-2" :href="route('register')" :active="request()->routeIs('register')">
-                {{ __('Зарегистрировать') }}
+                {{ __('Регистрация') }}
             </x-nav-link>
             <x-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')">
                 {{ __('Задачи') }}
