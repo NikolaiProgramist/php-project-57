@@ -60,7 +60,7 @@
                     </div>
 
                     <div class="flex items-center gap-4">
-                        <x-primary-button>{{ __('Создать') }}</x-primary-button>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Создать</button>
                     </div>
                 </form>
             </div>
