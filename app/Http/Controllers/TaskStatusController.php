@@ -20,7 +20,7 @@ class TaskStatusController extends Controller
      */
     public function index(): View
     {
-        $taskStatuses = TaskStatus::paginate(3);
+        $taskStatuses = TaskStatus::paginate(5);
 
         return view('task_status.index', compact('taskStatuses'));
     }

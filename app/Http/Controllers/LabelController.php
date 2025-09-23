@@ -20,7 +20,7 @@ class LabelController extends Controller
      */
     public function index(): View
     {
-        return view('label.index', ['labels' => Label::paginate(3)]);
+        return view('label.index', ['labels' => Label::paginate(5)]);
     }
 
     /**
