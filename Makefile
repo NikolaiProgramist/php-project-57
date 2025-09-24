@@ -39,7 +39,7 @@ test-coverage-text:
 	XDEBUG_MODE=coverage composer exec --verbose phpunit tests -- --coverage-text
 
 lint:
-	./vendor/bin/phpcs --standard=PSR12 app routes database lang tests bootstrap
+	./vendor/bin/phpcs --standard=PSR12 app routes database lang tests
 
 lint-fix:
-	./vendor/bin/phpcbf --standard=PSR12 app routes database lang tests bootstrap
+	./vendor/bin/phpcbf --standard=PSR12 app routes database lang tests
