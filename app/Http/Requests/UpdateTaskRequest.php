@@ -46,4 +46,11 @@ class UpdateTaskRequest extends FormRequest
             ],
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'name' => 'задача',
+        ];
+    }
 }

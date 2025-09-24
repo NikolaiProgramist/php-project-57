@@ -33,4 +33,11 @@ class StoreLabelRequest extends FormRequest
             ],
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'name' => 'метка',
+        ];
+    }
 }

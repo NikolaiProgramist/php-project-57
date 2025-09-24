@@ -30,4 +30,11 @@ class StoreTaskStatusRequest extends FormRequest
             ],
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'name' => 'статус',
+        ];
+    }
 }

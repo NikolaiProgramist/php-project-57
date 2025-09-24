@@ -34,4 +34,11 @@ class UpdateLabelRequest extends FormRequest
             ],
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'name' => 'метка',
+        ];
+    }
 }

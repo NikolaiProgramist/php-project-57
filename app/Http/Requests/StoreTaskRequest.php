@@ -45,4 +45,11 @@ class StoreTaskRequest extends FormRequest
             ],
         ];
     }
+
+    public function attributes(): array
+    {
+        return [
+            'name' => 'задача',
+        ];
+    }
 }
