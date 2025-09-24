@@ -26,4 +26,4 @@ Route::resource('tasks', TaskController::class);
 
 Route::resource('labels', LabelController::class)->except(['show']);
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
