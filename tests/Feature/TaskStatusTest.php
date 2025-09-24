@@ -19,14 +19,14 @@ class TaskStatusTest extends TestCase
         $this->user = User::factory()->create();
     }
 
-    public function test_task_statuses_is_displayed(): void
+    public function testTaskStatusesIsDisplayed(): void
     {
         $response = $this->get('/task_statuses');
 
         $response->assertOk();
     }
 
-    public function test_task_status_create_form_is_displayed(): void
+    public function testTaskStatusCreateFormIsDisplayed(): void
     {
         $response = $this
             ->actingAs($this->user)
@@ -35,7 +35,7 @@ class TaskStatusTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_user_can_create_task_status(): void
+    public function testUserCanCreateTaskStatus(): void
     {
         $response = $this
             ->actingAs($this->user)
@@ -50,7 +50,7 @@ class TaskStatusTest extends TestCase
         ]);
     }
 
-    public function test_user_cannot_duplicate_task_status(): void
+    public function testUserCannotDuplicateTaskStatus(): void
     {
         $this
             ->actingAs($this->user)
@@ -67,7 +67,7 @@ class TaskStatusTest extends TestCase
         $response->assertRedirectBack();
     }
 
-    public function test_task_status_edit_form_is_displayed(): void
+    public function testTaskStatusEditFormIsDisplayed(): void
     {
         $this
             ->actingAs($this->user)
@@ -80,7 +80,7 @@ class TaskStatusTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_user_can_update_task_status(): void
+    public function testUserCanUpdateTaskStatus(): void
     {
         $this
             ->actingAs($this->user)
@@ -105,7 +105,7 @@ class TaskStatusTest extends TestCase
         ]);
     }
 
-    public function test_user_can_delete_task_status(): void
+    public function testUserCanDeleteTaskStatus(): void
     {
         $this
             ->actingAs($this->user)
@@ -128,7 +128,7 @@ class TaskStatusTest extends TestCase
         ]);
     }
 
-    public function test_user_cannot_delete_task_status_if_it_is_associated_with_task(): void
+    public function testUserCannotDeleteTaskStatusIfItIsAssociatedWithTask(): void
     {
         $this
             ->actingAs($this->user)

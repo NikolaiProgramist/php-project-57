@@ -20,14 +20,14 @@ class LabelTest extends TestCase
         $this->user = User::factory()->create();
     }
 
-    public function test_labels_is_displayed(): void
+    public function testLabelsIsDisplayed(): void
     {
         $response = $this->get('/labels');
 
         $response->assertOk();
     }
 
-    public function test_label_create_form_is_displayed(): void
+    public function testLabelCreateFormIsDisplayed(): void
     {
         $response = $this
             ->actingAs($this->user)
@@ -36,7 +36,7 @@ class LabelTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_user_can_create_label(): void
+    public function testUserCanCreateLabel(): void
     {
         $this->assertDatabaseMissing('labels', [
             'name' => 'Testing',
@@ -56,7 +56,7 @@ class LabelTest extends TestCase
         ]);
     }
 
-    public function test_user_cannot_duplicate_label(): void
+    public function testUserCannotDuplicateLabel(): void
     {
         $this
             ->actingAs($this->user)
@@ -75,7 +75,7 @@ class LabelTest extends TestCase
         $response->assertRedirectBack();
     }
 
-    public function test_label_edit_form_is_displayed(): void
+    public function testLabelEditFormIsDisplayed(): void
     {
         $this
             ->actingAs($this->user)
@@ -91,7 +91,7 @@ class LabelTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_user_can_update_label(): void
+    public function testUserCanUpdateLabel(): void
     {
         $this
             ->actingAs($this->user)
@@ -122,7 +122,7 @@ class LabelTest extends TestCase
         ]);
     }
 
-    public function test_user_can_delete_label(): void
+    public function testUserCanDeleteLabel(): void
     {
         $this
             ->actingAs($this->user)
@@ -146,7 +146,7 @@ class LabelTest extends TestCase
         ]);
     }
 
-    public function test_user_cannot_delete_label_if_it_is_associated_with_task(): void
+    public function testUserCannotDeleteLabelIfItIsAssociatedWithTask(): void
     {
         $taskStatus = TaskStatus::factory()->create();
 

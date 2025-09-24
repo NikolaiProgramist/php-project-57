@@ -26,13 +26,13 @@ class TaskTest extends TestCase
         $this->taskStatus = TaskStatus::factory()->create();
     }
 
-    public function test_tasks_is_displayed(): void
+    public function testTasksIsDisplayed(): void
     {
         $response = $this->get('/tasks');
         $response->assertOk();
     }
 
-    public function test_task_create_form_is_displayed(): void
+    public function testTaskCreateFormIsDisplayed(): void
     {
         $response = $this
             ->actingAs($this->user)
@@ -41,7 +41,7 @@ class TaskTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_user_can_create_task(): void
+    public function testUserCanCreateTask(): void
     {
         $this->assertDatabaseMissing('tasks', [
             'name' => 'Run tests',
@@ -64,7 +64,7 @@ class TaskTest extends TestCase
         ]);
     }
 
-    public function test_user_cannot_duplicate_task(): void
+    public function testUserCannotDuplicateTask(): void
     {
         $this
             ->actingAs($this->user)
@@ -89,7 +89,7 @@ class TaskTest extends TestCase
         $response->assertRedirectBack();
     }
 
-    public function test_task_is_displayed(): void
+    public function testTaskIsDisplayed(): void
     {
         $this
             ->actingAs($this->user)
@@ -105,7 +105,7 @@ class TaskTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_task_edit_form_is_displayed(): void
+    public function testTaskEditFormIsDisplayed(): void
     {
         $this
             ->actingAs($this->user)
@@ -124,7 +124,7 @@ class TaskTest extends TestCase
         $response->assertOk();
     }
 
-    public function test_user_can_update_task(): void
+    public function testUserCanUpdateTask(): void
     {
         $this
             ->actingAs($this->user)
@@ -161,7 +161,7 @@ class TaskTest extends TestCase
         ]);
     }
 
-    public function test_user_can_delete_your_task(): void
+    public function testUserCanDeleteYourTask(): void
     {
         $this
             ->actingAs($this->user)
@@ -188,7 +188,7 @@ class TaskTest extends TestCase
         ]);
     }
 
-    public function test_user_cannot_delete_not_your_task(): void
+    public function testUserCannotDeleteNotYourTask(): void
     {
         $this
             ->actingAs($this->user)
