@@ -9,9 +9,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Task extends Model
 {
-    /** @use HasFactory<\Database\Factories\TaskFactory> */
-    use HasFactory;
-
     protected $fillable = ['name', 'description', 'status_id', 'assigned_to_id'];
 
     public function status(): BelongsTo
