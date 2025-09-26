@@ -19,7 +19,7 @@ class TaskPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(?User $user, Task $task): bool
+    public function view(?User $user): bool
     {
         return true;
     }
@@ -27,7 +27,7 @@ class TaskPolicy
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): bool
+    public function create(): bool
     {
         return Auth::check();
     }
@@ -35,7 +35,7 @@ class TaskPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Task $task): bool
+    public function update(): bool
     {
         return Auth::check();
     }
