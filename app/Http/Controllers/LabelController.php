@@ -37,7 +37,7 @@ class LabelController extends Controller
     public function store(StoreLabelRequest $request): RedirectResponse
     {
         Label::create($request->all());
-        flash('Метка успешно создана')->success();
+        flash(__('flashes.labels.create.success'))->success();
 
         return redirect(route('labels.index'));
     }
@@ -56,7 +56,7 @@ class LabelController extends Controller
     public function update(UpdateLabelRequest $request, Label $label): RedirectResponse
     {
         $label->update($request->all());
-        flash('Метка успешно изменена')->success();
+        flash(__('flashes.labels.update.success'))->success();
 
         return redirect(route('labels.index'));
     }
@@ -67,13 +67,13 @@ class LabelController extends Controller
     public function destroy(Label $label): RedirectResponse
     {
         if ($label->tasks->isNotEmpty()) {
-            flash('Не удалось удалить метку')->error();
+            flash(__('flashes.labels.delete.error'))->error();
 
             return redirect(route('labels.index'));
         }
 
         $label->delete();
-        flash('Метка успешно удалена')->success();
+        flash(__('flashes.labels.delete.success'))->success();
 
         return redirect(route('labels.index'));
     }

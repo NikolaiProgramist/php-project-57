@@ -39,7 +39,7 @@ class TaskStatusController extends Controller
     public function store(StoreTaskStatusRequest $request): RedirectResponse
     {
         TaskStatus::create($request->all());
-        flash('Статус успешно создан')->success();
+        flash(__('flashes.statuses.create.success'))->success();
 
         return redirect(route('task_statuses.index'));
     }
@@ -58,7 +58,7 @@ class TaskStatusController extends Controller
     public function update(UpdateTaskStatusRequest $request, TaskStatus $taskStatus): RedirectResponse
     {
         $taskStatus->update($request->all());
-        flash('Статус успешно изменён')->success();
+        flash(__('flashes.statuses.update.success'))->success();
 
         return redirect(route('task_statuses.index'));
     }
@@ -69,13 +69,13 @@ class TaskStatusController extends Controller
     public function destroy(TaskStatus $taskStatus): RedirectResponse
     {
         if ($taskStatus->tasks->isNotEmpty()) {
-            flash('Не удалось удалить статус')->error();
+            flash(__('flashes.statuses.delete.error'))->error();
 
             return redirect(route('task_statuses.index'));
         }
 
         $taskStatus->delete();
-        flash('Статус успешно удалён')->success();
+        flash(__('flashes.statuses.delete.success'))->success();
 
         return redirect(route('task_statuses.index'));
     }
