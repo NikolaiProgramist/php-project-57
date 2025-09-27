@@ -132,7 +132,7 @@ class LabelTest extends TestCase
             ]);
 
         $this->assertDatabaseHas('labels', [
-            'name' => 'Testing',
+            'id' => '1',
         ]);
 
         $response = $this
@@ -142,7 +142,7 @@ class LabelTest extends TestCase
         $response->assertRedirect('/labels');
 
         $this->assertDatabaseMissing('labels', [
-            'name' => 'Testing',
+            'id' => '1',
         ]);
     }
 
