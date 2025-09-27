@@ -1,6 +1,6 @@
 # Task Manager
 
-[![Actions Status](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/NikolaiProgramist/php-project-57/actions) [![lint](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/lint.yml/badge.svg)](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/lint.yml) [![tests](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/tests.yml/badge.svg)](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/tests.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57)<br>
+[![Actions Status](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/NikolaiProgramist/php-project-57/actions) [![tests](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/tests.yml/badge.svg)](https://github.com/NikolaiProgramist/php-project-57/actions/workflows/tests.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57)<br>
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57) [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=coverage)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57)<br>
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=bugs)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57) [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=NikolaiProgramist_php-project-57&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=NikolaiProgramist_php-project-57)
 
@@ -27,9 +27,9 @@ This is a minimalistic CRM system for managing the flow of tasks and personnel.
 
 2. Select setup type:
 
-   * [Quick Start](#-quick-start)
-   * [Docker](#-docker)
-   * [Local](#-local)
+    * [Quick Start](#-quick-start)
+    * [Docker](#-docker)
+    * [Local](#-local)
 
 3. Follow this link: http://localhost:8000
 
@@ -78,7 +78,8 @@ There is currently no license. All rights reserved ©
 
 ## Support
 
-You can [Create Issues](https://github.com/NikolaiProgramist/php-project-57/issues) to help improve the project. You can suggest your ideas, find bugs and errors. We will be grateful for your help!
+You can [Create Issues](https://github.com/NikolaiProgramist/php-project-57/issues) to help improve the project. You can
+suggest your ideas, find bugs and errors. We will be grateful for your help!
 
 ## Stargazers over time
 
