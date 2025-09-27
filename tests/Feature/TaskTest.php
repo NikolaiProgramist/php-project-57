@@ -174,7 +174,7 @@ class TaskTest extends TestCase
             ]);
 
         $this->assertDatabaseHas('tasks', [
-            'name' => 'Run tests',
+            'id' => '1',
         ]);
 
         $response = $this
@@ -184,7 +184,7 @@ class TaskTest extends TestCase
         $response->assertRedirect('/tasks');
 
         $this->assertDatabaseMissing('tasks', [
-            'name' => 'Run tests',
+            'id' => '1',
         ]);
     }
 
@@ -201,7 +201,7 @@ class TaskTest extends TestCase
             ]);
 
         $this->assertDatabaseHas('tasks', [
-            'name' => 'Run tests',
+            'id' => '1',
         ]);
 
         $response = $this
@@ -211,7 +211,7 @@ class TaskTest extends TestCase
         $response->assertStatus(403);
 
         $this->assertDatabaseHas('tasks', [
-            'name' => 'Run tests',
+            'id' => '1',
         ]);
     }
 }
