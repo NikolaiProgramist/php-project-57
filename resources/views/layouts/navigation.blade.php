@@ -12,9 +12,6 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Панель управления') }}
-                    </x-nav-link>
                     <x-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')">
                         {{ __('Задачи') }}
                     </x-nav-link>
@@ -103,9 +100,6 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         @if(Auth::user())
             <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Панель управления') }}
-                </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('tasks.index')" :active="request()->routeIs('tasks.index')">
                     {{ __('Задачи') }}
                 </x-responsive-nav-link>
