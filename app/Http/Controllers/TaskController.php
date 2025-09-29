@@ -59,7 +59,7 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request): RedirectResponse
     {
-        $task = new Task($request->all());
+        $task = new Task($request->validated());
         $task->createdBy()->associate(Auth::user());
         $task->save();
 
@@ -95,7 +95,7 @@ class TaskController extends Controller
      */
     public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
     {
-        $task->update($request->all());
+        $task->update($request->validated());
         $task->labels()->sync($request->get('labels'));
 
         flash(__('flashes.tasks.update.success'))->success();

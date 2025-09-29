@@ -38,7 +38,7 @@ class TaskStatusController extends Controller
      */
     public function store(StoreTaskStatusRequest $request): RedirectResponse
     {
-        TaskStatus::create($request->all());
+        TaskStatus::create($request->validated());
         flash(__('flashes.statuses.create.success'))->success();
 
         return redirect(route('task_statuses.index'));
@@ -57,7 +57,7 @@ class TaskStatusController extends Controller
      */
     public function update(UpdateTaskStatusRequest $request, TaskStatus $taskStatus): RedirectResponse
     {
-        $taskStatus->update($request->all());
+        $taskStatus->update($request->validated());
         flash(__('flashes.statuses.update.success'))->success();
 
         return redirect(route('task_statuses.index'));

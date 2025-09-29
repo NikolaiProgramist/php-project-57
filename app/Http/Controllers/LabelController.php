@@ -36,7 +36,7 @@ class LabelController extends Controller
      */
     public function store(StoreLabelRequest $request): RedirectResponse
     {
-        Label::create($request->all());
+        Label::create($request->validated());
         flash(__('flashes.labels.create.success'))->success();
 
         return redirect(route('labels.index'));
