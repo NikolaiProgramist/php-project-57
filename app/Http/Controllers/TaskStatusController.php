@@ -71,7 +71,7 @@ class TaskStatusController extends Controller
         if ($taskStatus->tasks()->exists()) {
             flash(__('flashes.statuses.delete.error'))->error();
 
-            return redirect(route('task_statuses.index'));
+            return back();
         }
 
         $taskStatus->delete();

@@ -69,7 +69,7 @@ class LabelController extends Controller
         if ($label->tasks()->exists()) {
             flash(__('flashes.labels.delete.error'))->error();
 
-            return redirect(route('labels.index'));
+            return back();
         }
 
         $label->delete();
