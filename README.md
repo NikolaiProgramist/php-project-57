@@ -6,7 +6,7 @@
 
 ## About
 
-This is a minimalistic CRM system for managing the flow of tasks and personnel.
+This is a minimalistic CRM system for managing the flow of tasks, statuses, labels and personnel.
 
 **See the web service:** [Task Manager](https://php-project-57-xp8o.onrender.com).
 
