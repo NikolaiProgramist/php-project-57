@@ -108,6 +108,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task): RedirectResponse
     {
+        $task->labels()->detach();
         $task->delete();
         flash(__('flashes.tasks.delete.success'))->success();
 
