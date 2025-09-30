@@ -63,7 +63,7 @@ class TaskController extends Controller
         $task->createdBy()->associate(Auth::user());
         $task->save();
 
-        $task->labels()->sync($request->get('labels'));
+        $task->labels()->attach($request->get('labels'));
 
         flash(__('flashes.tasks.create.success'))->success();
 
