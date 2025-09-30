@@ -176,7 +176,7 @@ class LabelTest extends TestCase
             ->actingAs($this->user)
             ->delete('/labels/1');
 
-        $response->assertRedirect('/labels');
+        $response->assertRedirectBack();
 
         $this->assertDatabaseHas('labels', [
             'id' => '1',
