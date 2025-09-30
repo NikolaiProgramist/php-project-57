@@ -1,14 +1,16 @@
 ---
 
 services:
-    backend:
-        depends_on:
-            db:
-                condition: service_healthy
-                restart: true
-        build: .
-        ports:
-            - "8000:8000"
+  backend:
+    depends_on:
+      db:
+        condition: service_healthy
+        restart: true
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
 
     db:
         image: postgres
