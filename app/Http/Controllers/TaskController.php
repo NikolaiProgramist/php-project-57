@@ -63,7 +63,7 @@ class TaskController extends Controller
         $task->createdBy()->associate(Auth::user());
         $task->save();
 
-        $task->labels()->attach($request->get('labels'));
+        $task->labels()->sync($request->get('labels'));
 
         flash(__('flashes.tasks.create.success'))->success();
 
@@ -96,8 +96,7 @@ class TaskController extends Controller
     public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
     {
         $task->update($request->validated());
-        $task->labels()->detach();
-        $task->labels()->attach($request->get('labels'));
+        $task->labels()->sync($request->get('labels'));
 
         flash(__('flashes.tasks.update.success'))->success();
 
