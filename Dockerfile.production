@@ -21,4 +21,4 @@ RUN composer install
 RUN npm ci
 RUN npm run build
 
-CMD ["bash", "-c", "php artisan migrate --force && make start"]
+CMD ["bash", "-c", "php artisan migrate:fresh --force && make start"]
