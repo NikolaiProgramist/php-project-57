@@ -175,6 +175,7 @@ class TaskTest extends TestCase
 
         $this->assertDatabaseHas('tasks', [
             'id' => '1',
+            'deleted_at' => null,
         ]);
 
         $response = $this
@@ -185,6 +186,7 @@ class TaskTest extends TestCase
 
         $this->assertDatabaseMissing('tasks', [
             'id' => '1',
+            'deleted_at' => null,
         ]);
     }
 
