@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use DDZobov\PivotSoftDeletes\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Label extends Model
@@ -11,6 +11,6 @@ class Label extends Model
 
     public function tasks(): BelongsToMany
     {
-        return $this->belongsToMany(Task::class)->withTimestamps();
+        return $this->belongsToMany(Task::class)->withTimestamps()->withSoftDeletes();
     }
 }

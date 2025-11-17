@@ -2,15 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use DDZobov\PivotSoftDeletes\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * @property User $createdBy
  */
 class Task extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ['name', 'description', 'status_id', 'assigned_to_id'];
 
     public function status(): BelongsTo
@@ -30,6 +33,6 @@ class Task extends Model
 
     public function labels(): BelongsToMany
     {
-        return $this->belongsToMany(Label::class)->withTimestamps();
+        return $this->belongsToMany(Label::class)->withTimestamps()->withSoftDeletes();
     }
 }
