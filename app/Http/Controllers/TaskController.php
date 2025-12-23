@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
 use App\Models\Label;
+use App\Models\LabelTask;
 use App\Models\Task;
 use App\Models\TaskStatus;
 use App\Models\User;
@@ -96,7 +97,9 @@ class TaskController extends Controller
     public function update(UpdateTaskRequest $request, Task $task): RedirectResponse
     {
         $task->update($request->validated());
-        $task->labels()->sync($request->get('labels'));
+
+        LabelTask::forceDeleteByTask($task);
+        $task->labels()->attach($request->validated('labels'));
 
         flash(__('flashes.tasks.update.success'))->success();
 
