@@ -12,6 +12,8 @@ class LabelSeeder extends Seeder
      */
     public function run(): void
     {
+        Label::truncate();
+
         Label::create([
             'name' => 'безопасность',
             'description' => 'Проверка безопасности кода. XSS, CSRF уязвимости.',

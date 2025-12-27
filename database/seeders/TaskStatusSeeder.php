@@ -12,6 +12,8 @@ class TaskStatusSeeder extends Seeder
      */
     public function run(): void
     {
+        TaskStatus::truncate();
+
         TaskStatus::create([
             'name' => 'новый',
         ]);
