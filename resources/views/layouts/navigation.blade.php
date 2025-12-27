@@ -62,17 +62,6 @@
                             </form>
                         </x-slot>
                     </x-dropdown>
-
-                    <!-- Authentication (REMOVE) -->
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-
-                        <x-dropdown-link :href="route('logout')"
-                                         onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                            {{ __('Выйти') }}
-                        </x-dropdown-link>
-                    </form>
                 </div>
             @else
                 <x-nav-link class="ml-auto hidden sm:flex" :href="route('login')" :active="request()->routeIs('login')">
