@@ -15,6 +15,7 @@ This is a minimalistic CRM system for managing the flow of tasks, statuses, labe
 * PHP ^8.2
 * Node ^20.19.0 || >=22.12.0
 * npm
+* make
 
 ## Setup
 
