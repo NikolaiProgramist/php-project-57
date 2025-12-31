@@ -9,6 +9,7 @@ use App\Models\LabelTask;
 use App\Models\Task;
 use App\Models\TaskStatus;
 use App\Models\User;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -27,12 +28,17 @@ class TaskController extends Controller
      */
     public function index(): View
     {
-        $tasks = QueryBuilder::for(Task::class)
+        $tasks = QueryBuilder::for(Task::withTrashed())
             ->allowedFilters([
                 'name',
                 AllowedFilter::exact('status_id'),
                 AllowedFilter::exact('created_by_id'),
                 AllowedFilter::exact('assigned_to_id'),
+                AllowedFilter::callback('deleted_at', function (Builder $query, $value) {
+                    if ($value === null) {
+                        $query->whereNull('deleted_at');
+                    }
+                })->default(null),
             ])
             ->orderBy('id')
             ->paginate(15);

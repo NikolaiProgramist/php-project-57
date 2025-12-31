@@ -45,6 +45,12 @@
                     @endforeach
                 </select>
 
+                @if(request()->input('filter.deleted_at') === 'on')
+                    <x-checkbox checked name="filter[deleted_at]" id="filter[deleted_at]">Удалённые задачи</x-checkbox>
+                @else
+                    <x-checkbox name="filter[deleted_at]" id="filter[deleted_at]">Удалённые задачи</x-checkbox>
+                @endif
+
                 <x-primary-button>Применить</x-primary-button>
             </form>
         </div>
@@ -84,7 +90,7 @@
                 @if(!empty($tasks))
                     @foreach($tasks as $task)
                         <div class="flex justify-between">
-                            <div class="w-[90%] flex justify-between items-center text-left space-x-4 mb-2 p-3 bg-indigo-50 dark:bg-gray-700 rounded-lg transition-all duration-300 hover:bg-indigo-100 dark:hover:bg-gray-600">
+                            <div class="w-[90%] flex justify-between items-center text-left space-x-4 mb-2 p-3 {{ $task->deleted_at === null ? "bg-indigo-50 hover:bg-indigo-100 dark:hover:bg-gray-600" : "bg-red-50 hover:bg-red-100 dark:hover:bg-red-600" }} dark:bg-gray-700 rounded-lg transition-all duration-300">
                                 <div class="w-[4%]">
                                     <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->id }}</p>
                                 </div>
@@ -92,9 +98,13 @@
                                     <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->status->name }}</p>
                                 </div>
                                 <div class="w-[36%]">
-                                    <a href="{{ route('tasks.show', $task) }}">
-                                        <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ $task->name }}</h3>
-                                    </a>
+                                    @if($task->deleted_at === null)
+                                        <a href="{{ route('tasks.show', $task) }}">
+                                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ $task->name }}</h3>
+                                        </a>
+                                    @else
+                                        <h3 class="text-lg font-semibold text-red-800 dark:text-red-800">{{ $task->name }}</h3>
+                                    @endif
                                 </div>
                                 <div class="w-[16%]">
                                     <p class="text-sm mt-1.5 text-gray-600 font-bold dark:text-gray-300">{{ $task->createdBy->name }}</p>
