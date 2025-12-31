@@ -35,6 +35,9 @@ return [
         'delete' => [
             'success' => 'Task successfully deleted',
         ],
+        'restore' => [
+            'success' => 'Task successfully restored',
+        ],
     ],
 
     'labels' => [

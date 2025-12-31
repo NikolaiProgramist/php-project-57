@@ -47,4 +47,12 @@ class TaskPolicy
     {
         return $user->id === $task->createdBy->id;
     }
+
+    /**
+     * Determine whether the user can restore the model.
+     */
+    public function restore(User $user, Task $task): bool
+    {
+        return $user->id === $task->createdBy->id;
+    }
 }

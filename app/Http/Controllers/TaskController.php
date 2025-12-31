@@ -123,4 +123,17 @@ class TaskController extends Controller
 
         return redirect(route('tasks.index'));
     }
+
+    public function restore(string $id): RedirectResponse
+    {
+        $task = Task::withTrashed()->findOrFail($id);
+        $this->authorize('restore', $task);
+
+        $task->labels()->withTrashed()->restore();
+        $task->restore();
+
+        flash(__('flashes.tasks.restore.success'))->success();
+
+        return redirect(route('tasks.index'));
+    }
 }

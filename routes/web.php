@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('task_statuses', TaskStatusController::class)->except(['show']);
 Route::resource('tasks', TaskController::class);
+Route::patch('tasks/{task}/restore', [TaskController::class, 'restore'])->name('tasks.restore');
 Route::resource('labels', LabelController::class)->except(['show']);
 
 require __DIR__ . '/auth.php';
