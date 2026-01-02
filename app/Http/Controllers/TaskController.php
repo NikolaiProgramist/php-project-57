@@ -136,4 +136,17 @@ class TaskController extends Controller
 
         return redirect(route('tasks.index'));
     }
+
+    public function forceDelete(string $id): RedirectResponse
+    {
+        $task = Task::withTrashed()->findOrFail($id);
+        $this->authorize('force-delete', $task);
+
+        LabelTask::forceDeleteByTask($task);
+        $task->forceDelete();
+
+        flash(__('flashes.tasks.forceDelete.success'))->success();
+
+        return redirect(route('tasks.index'));
+    }
 }

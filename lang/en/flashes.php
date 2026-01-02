@@ -33,6 +33,9 @@ return [
             'success' => 'Task successfully changed',
         ],
         'delete' => [
+            'success' => 'Task successfully moved to deleted',
+        ],
+        'forceDelete' => [
             'success' => 'Task successfully deleted',
         ],
         'restore' => [
