@@ -182,7 +182,7 @@ class TaskTest extends TestCase
             ->actingAs($this->user)
             ->delete('/tasks/1');
 
-        $response->assertRedirect('/tasks');
+        $response->assertRedirectBack();
 
         $this->assertDatabaseMissing('tasks', [
             'id' => '1',

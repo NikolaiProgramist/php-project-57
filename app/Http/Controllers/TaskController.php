@@ -121,7 +121,7 @@ class TaskController extends Controller
         $task->delete();
         flash(__('flashes.tasks.delete.success'))->success();
 
-        return redirect(route('tasks.index'));
+        return redirect()->back();
     }
 
     public function restore(string $id): RedirectResponse
@@ -134,7 +134,7 @@ class TaskController extends Controller
 
         flash(__('flashes.tasks.restore.success'))->success();
 
-        return redirect(route('tasks.index'));
+        return redirect()->back();
     }
 
     public function forceDelete(string $id): RedirectResponse
@@ -147,6 +147,6 @@ class TaskController extends Controller
 
         flash(__('flashes.tasks.forceDelete.success'))->success();
 
-        return redirect(route('tasks.index'));
+        return redirect()->back();
     }
 }
