@@ -129,7 +129,7 @@ class TaskController extends Controller
         $task = Task::withTrashed()->findOrFail($id);
         $this->authorize('restore', $task);
 
-        $task->labels()->withTrashed()->restore();
+        $task->labels()->withSoftDeletes()->restore();
         $task->restore();
 
         flash(__('flashes.tasks.restore.success'))->success();
