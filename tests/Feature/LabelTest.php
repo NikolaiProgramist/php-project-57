@@ -133,7 +133,6 @@ class LabelTest extends TestCase
 
         $this->assertDatabaseHas('labels', [
             'id' => '1',
-            'deleted_at' => null,
         ]);
 
         $response = $this
@@ -144,7 +143,6 @@ class LabelTest extends TestCase
 
         $this->assertDatabaseMissing('labels', [
             'id' => '1',
-            'deleted_at' => null,
         ]);
     }
 
