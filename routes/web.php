@@ -4,10 +4,16 @@ use App\Http\Controllers\LabelController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TaskStatusController;
+use App\Models\Task;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'usersCount' => User::all()->count(),
+        'tasksCount' => Task::all()->count(),
+        'deletedTasksCount' => Task::onlyTrashed()->count(),
+    ]);
 });
 
 Route::middleware('auth')->group(function () {
