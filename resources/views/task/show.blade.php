@@ -3,7 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             <div class="flex justify-start">
                 <div class="flex items-center">
-                    <span>{{ __("Просмотр задачи: {$task->name}") }}</span>
+                    <span>{{ __("View a task: {$task->name}") }}</span>
                 </div>
                 <div class="w-20 ml-2">
                     <a href="{{ route('tasks.edit', $task) }}"
@@ -24,13 +24,13 @@
             <div class="p-4 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <div class="flex justify-start">
                     <div>
-                        <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Имя: {{ $task->name }}</h3>
+                        <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Name:') }} {{ $task->name }}</h3>
                     </div>
                 </div>
                 <div class="flex justify-start">
                     <div>
                         <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">
-                            Статус:
+                            {{ __('Status:') }}
                         </h3>
                     </div>
                     <div>
@@ -40,7 +40,7 @@
                 <div class="flex justify-start">
                     <div>
                         <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">
-                            Описание:
+                            {{ __('Description:') }}
                         </h3>
                     </div>
                     <div>
@@ -50,7 +50,7 @@
                 <div>
                     <div>
                         <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">
-                            Метки:
+                            {{ __('Labels:') }}
                         </h3>
                     </div>
                     <div class="flex justify-start mt-3">

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Задачи') }}
+            {{ __('Tasks') }}
         </h2>
     </x-slot>
 
@@ -11,7 +11,7 @@
             <form method="GET" action="{{ route('tasks.index') }}" class="flex items-center justify-center">
                 <select name="filter[status_id]" id="filter[status_id]"
                         class="max-w-[36%] mt-1 mr-4 block border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                    <option value="">Статус</option>
+                    <option value="">{{ __('Status') }}</option>
                     @foreach($statuses as $status)
                         @if(request()->input('filter.status_id') === (string) $status->id)
                             <option selected="selected" value="{{ $status->id }}">{{ $status->name }}</option>
@@ -23,7 +23,7 @@
 
                 <select name="filter[created_by_id]" id="filter[created_by_id]"
                         class="max-w-[36%] mt-1 mr-4 block border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                    <option value="">Автор</option>
+                    <option value="">{{ __('Author') }}</option>
                     @foreach($users as $user)
                         @if(request()->input('filter.created_by_id') === (string) $user->id)
                             <option selected="selected" value="{{ $user->id }}">{{ $user->name }}</option>
@@ -35,7 +35,7 @@
 
                 <select name="filter[assigned_to_id]" id="filter[assigned_to_id]"
                         class="max-w-[36%] mt-1 mr-4 block border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm">
-                    <option value="">Исполнитель</option>
+                    <option value="">{{ __('Assigned') }}</option>
                     @foreach($users as $user)
                         @if(request()->input('filter.assigned_to_id') === (string) $user->id)
                             <option selected="selected" value="{{ $user->id }}">{{ $user->name }}</option>
@@ -46,12 +46,12 @@
                 </select>
 
                 @if(request()->input('filter.deleted_at') === 'on')
-                    <x-checkbox checked name="filter[deleted_at]" id="filter[deleted_at]">Удалённые задачи</x-checkbox>
+                    <x-checkbox checked name="filter[deleted_at]" id="filter[deleted_at]">{{ __('actions.Deleted tasks') }}</x-checkbox>
                 @else
-                    <x-checkbox name="filter[deleted_at]" id="filter[deleted_at]">Удалённые задачи</x-checkbox>
+                    <x-checkbox name="filter[deleted_at]" id="filter[deleted_at]">{{ __('actions.Deleted tasks') }}</x-checkbox>
                 @endif
 
-                <x-primary-button>Применить</x-primary-button>
+                <x-primary-button>{{ __('actions.Apply') }}</x-primary-button>
             </form>
         </div>
     </div>
@@ -62,28 +62,28 @@
                 <div class="flex justify-between">
                     <div class="w-[90%] flex justify-between items-center text-left space-x-4 mb-2 p-3 rounded-lg">
                         <div class="w-[4%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">ID</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('ID') }}</h3>
                         </div>
                         <div class="w-[8%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Статус</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Status') }}</h3>
                         </div>
                         <div class="w-[36%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Имя</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Name') }}</h3>
                         </div>
                         <div class="w-[16%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Автор</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Author') }}</h3>
                         </div>
                         <div class="w-[16%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Исполнитель</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Assigned') }}</h3>
                         </div>
                         <div class="w-[16%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Дата создания</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Creation date') }}</h3>
                         </div>
                     </div>
 
                     @auth()
                         <div class="w-[8%] h-auto text-center items-center space-x-4 mb-2 p-3">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Действия</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Actions') }}</h3>
                         </div>
                     @endauth
                 </div>
@@ -132,7 +132,7 @@
 
                                             @can('delete', $task)
                                                 <a href="{{ route('tasks.destroy', $task) }}"
-                                                   data-confirm="{{ __('Вы уверенны?') }}" data-method="delete"
+                                                   data-confirm="{{ __('Are you sure?') }}" data-method="delete"
                                                    rel="nofollow"
                                                    class="w-[48%] inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                                     <svg class="w-[50%] mx-auto fill-white"
@@ -146,7 +146,7 @@
                                         @else
                                             @can('restore', $task)
                                                 <a href="{{ route('tasks.restore', $task) }}"
-                                                   data-confirm="{{ __('Вы уверенны?') }}" data-method="patch"
+                                                   data-confirm="{{ __('Are you sure?') }}" data-method="patch"
                                                    rel="nofollow"
                                                    class="w-[48%] inline-flex items-center px-4 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-500 rounded-md font-semibold text-xs text-gray-700 dark:text-gray-300 uppercase tracking-widest shadow-sm hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 disabled:opacity-25 transition ease-in-out duration-150">
                                                     <svg class="w-[50%] mx-auto fill-indigo-800"
@@ -159,7 +159,7 @@
 
                                             @can('forceDelete', $task)
                                                 <a href="{{ route('tasks.force', $task) }}"
-                                                   data-confirm="{{ __('Вы уверенны?') }}" data-method="delete"
+                                                   data-confirm="{{ __('Are you sure?') }}" data-method="delete"
                                                    rel="nofollow"
                                                    class="w-[48%] inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                                     <svg class="w-[50%] mx-auto fill-white"

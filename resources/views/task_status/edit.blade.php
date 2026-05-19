@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Редактирование статуса') }}
+            {{ __('Updating a status') }}
         </h2>
     </x-slot>
 
@@ -13,13 +13,13 @@
                     @method('PATCH')
 
                     <div>
-                        <x-input-label for="name" :value="__('Имя')" />
+                        <x-input-label for="name" :value="__('Name')" />
                         <x-text-input id="name" name="name" type="text" value="{{ $taskStatus->name }}" class="mt-1 block w-full" required autofocus />
                         <x-input-error class="mt-2" :messages="$errors->get('name')" />
                     </div>
 
                     <div class="flex items-center gap-4">
-                        <x-primary-button>{{ __('Обновить') }}</x-primary-button>
+                        <x-primary-button>{{ __('actions.Update') }}</x-primary-button>
                     </div>
                 </form>
             </div>

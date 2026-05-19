@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Метки') }}
+            {{ __('Labels') }}
         </h2>
     </x-slot>
 
@@ -11,22 +11,22 @@
                 <div class="flex justify-between">
                     <div class="w-[90%] flex justify-between items-center text-left space-x-4 mb-2 p-3 rounded-lg">
                         <div class="w-[4%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">ID</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('ID') }}</h3>
                         </div>
                         <div class="w-[15%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Имя</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Name') }}</h3>
                         </div>
                         <div class="w-[61%]">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Описание</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Description') }}</h3>
                         </div>
                         <div class="w-[16%] text-right">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Дата создания</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Creation date') }}</h3>
                         </div>
                     </div>
 
                     @auth()
                         <div class="w-[8%] h-auto text-center items-center space-x-4 mb-2 p-3">
-                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">Действия</h3>
+                            <h3 class="text-lg font-semibold text-indigo-800 dark:text-white">{{ __('Actions') }}</h3>
                         </div>
                     @endauth
                 </div>
@@ -61,7 +61,7 @@
                                         </a>
 
                                         <a href="{{ route('labels.destroy', $label) }}"
-                                           data-confirm="{{ __('Вы уверенны?') }}" data-method="delete"
+                                           data-confirm="{{ __('Are you sure?') }}" data-method="delete"
                                            rel="nofollow"
                                            class="w-[48%] inline-flex items-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500 active:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                             <svg class="w-[50%] mx-auto fill-white"

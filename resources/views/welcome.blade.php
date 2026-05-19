@@ -1,16 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
         <h1 class="font-semibold text-2xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Привет от Хекслета!') }}
+            {{ __('Hello from Hexlet!') }}
         </h1>
 
         <p class="text-sm mt-2 text-gray-600 dark:text-gray-300">
-            {{ __('Это простой менеджер задач на Laravel') }}
+            {{ __('This is a simple task manager built with Laravel. You can create tasks, statuses, and labels here. It also supports soft deletion') }}
         </p>
 
-        <div class="flex justify-between">
-            <div class="inline-flex items-center w-1/4 h-60 bg-indigo-100 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
-                <div class="m-auto mt-12">
+        <div class="mt-6 flex justify-between">
+            <div class="inline-flex items-center w-1/5 h-40 bg-indigo-100 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
+                <div class="m-auto">
                     <div>
                         <h2 class="text-center font-semibold text-6xl text-indigo-800 dark:text-gray-200 leading-tight">
                             {{ $usersCount }}
@@ -29,8 +29,8 @@
                 </div>
             </div>
 
-            <div class="inline-flex items-center w-1/4 h-60 bg-green-100 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
-                <div class="m-auto mt-12">
+            <div class="inline-flex items-center w-1/5 h-40 bg-green-100 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
+                <div class="m-auto">
                     <div>
                         <h2 class="text-center font-semibold text-6xl text-green-800 dark:text-gray-200 leading-tight">
                             {{ $tasksCount }}
@@ -49,8 +49,8 @@
                 </div>
             </div>
 
-            <div class="inline-flex items-center w-1/4 h-60 bg-red-100 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
-                <div class="m-auto mt-12">
+            <div class="inline-flex items-center w-1/5 h-40 bg-red-100 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl animate-fade-in">
+                <div class="m-auto">
                     <div>
                         <h2 class="text-center font-semibold text-6xl text-red-800 dark:text-gray-200 leading-tight">
                             {{ $deletedTasksCount }}

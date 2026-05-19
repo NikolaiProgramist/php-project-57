@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Создание метки') }}
+            {{ __('Creating a label') }}
         </h2>
     </x-slot>
 
@@ -12,20 +12,20 @@
                     @csrf
 
                     <div>
-                        <x-input-label for="name" :value="__('Имя')"/>
+                        <x-input-label for="name" :value="__('Name')"/>
                         <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" required autofocus/>
                         <x-input-error class="mt-2" :messages="$errors->get('name')"/>
                     </div>
 
                     <div>
-                        <x-input-label for="description" :value="__('Описание')"/>
+                        <x-input-label for="description" :value="__('Description')"/>
                         <x-textarea-input id="description" name="description" cols="30" rows="6"
                                           class="mt-1 block w-full"></x-textarea-input>
                         <x-input-error class="mt-2" :messages="$errors->get('description')"/>
                     </div>
 
                     <div class="flex items-center gap-4">
-                        <x-primary-button>{{ __('Создать') }}</x-primary-button>
+                        <x-primary-button>{{ __('actions.Create') }}</x-primary-button>
                     </div>
                 </form>
             </div>
